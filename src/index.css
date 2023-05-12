@@ -4,8 +4,8 @@
   font-weight: 400;
   
 
-  color: rgba(12, 12, 12, 0.87);
-  background-color: #d6ecd2;
+  color: rgba(255, 252, 252, 0.87);
+  /**background-color: #d6ecd2;**/
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,11 +20,60 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #0C582C;
+  color:white
+
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+dialog {
+  width: 80%;
+  height: 90%;
+  border:0px;
+  border-radius: 10px;
+  filter: drop-shadow(5px 9px 10px rgba(0, 0, 0, 0.4));
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+.checkDiv {
+  display: flex;
+  flex-direction: row;
+  margin: 5% auto;
+}
+
+.dataModal h2{
+  text-align: center;
+}
+
+.dataModal p {
+  text-align: justify;
+}
+
+.dataModal ol > li {
+  list-style-type: upper-roman;
+  text-align: justify;
+}
+
+.dataModal ol > li::marker {
+  font-weight: bold;
+}
+
+.dataModal ol > li > ul {
+  list-style-type: '-';
+}
+
+.dataModal ul > li {
+  text-align: justify;
 }
 
 button {

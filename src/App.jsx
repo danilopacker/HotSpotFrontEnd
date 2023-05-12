@@ -36,45 +36,42 @@ function App() {
   
     return (
       <>
-      <form onSubmit={e => { handleSubmit(e) }}>
+      <form id="accessForm"onSubmit={e => { handleSubmit(e) }}>
+        <div className="inputDiv">
         <label>Nome:</label>
-        <br />
         <input 
           name='name' 
           type='text'
           value={name}
           onChange={e => setName(e.target.value)}
         />
-        <br/>
+        </div>
+        <div className="inputDiv">
         <label>Email:</label>
-        <br />
         <input 
           name='email' 
           type='text' 
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
-        <br />
-        <input 
-          type='submit' 
-          value='Confirmar' 
-        />
-        <br />
+        </div>
+        <div className="checkDiv">
         <input
         required
           type="checkbox"
           id="subscribeNews"
           name="subscribe"
           value="newsletter" />
-        <label>Estou de acordo com os Termos de Uso </label>
+        <label>Estou de acordo com os <a onClick={(e) => handleOpenModal(e)} style={{cursor: 'pointer', color: '#b1cd49', fontWeight:'bold'}}>Termos de Uso</a></label>
+        </div>
       </form>
       <br />
-      <button onClick={(e) => handleOpenModal(e)}>Abrir</button>
-
-      
-      <dialog data-modal>
+      <button type="submit" form="accessForm" value="Submit">Confirmar</button>
+      <br />
+      {/*  <button onClick={(e) => handleOpenModal(e)}>Abrir</button> */}
+      <dialog data-modal className='dataModal'>
+        <h2>TERMOS DE USO DE ACESSO À INTERNET – Wi-Fi</h2>
         <div>
-          <h2>TERMOS DE USO DE ACESSO À INTERNET – Wi-Fi</h2>
           <p>Para utilizar o Wi-Fi disponibilizado pela Prefeitura Municipal de  Jaraguá do Sul (PMJS) para acesso à Internet, o USUÁRIO expressamente aceita, sem reservas ou ressalvas, todas as condições abaixo descritas. </p>
           <ol>
             <li>O Wi-Fi disponibilizado pela PMJS permite acesso a sites na internet (somente http e https), envio e recebimento de mensagens instantâneas através de aplicativos públicos (Gtalk, Facebook,  Whatsapp, entre outros) e a utilização de correio eletrônico. </li>
@@ -93,7 +90,6 @@ function App() {
                 <li>Constituam publicidade ilícita, enganosa ou desleal, em geral, que configurem concorrência desleal e/ou denominados "spam-mails";</li>
                 <li>Veiculem, incitem ou estimulem a pedofilia; e/ou,</li>
                 <li>Incorporem vírus ou outros elementos físicos ou eletrônicos que possam danificar ou impedir o normal funcionamento da rede, do sistema ou dos equipamentos (hardware e software) de terceiros ou que possam danificar os documentos eletrônicos e arquivos armazenados nestes equipamentos.</li>
-                <li></li>
               </ul>
             </li>
             <li>A PMJS não se responsabiliza, direta ou indiretamente, por quaisquer despesas, danos ou perdas que sejam efetiva ou alegadamente causados por quaisquer conteúdos, produtos ou serviços disponíveis em sites de terceiros ou recursos externos, não garantindo a perfeição, qualidade, veracidade, adequação, utilidade ou segurança do conteúdo ou de qualquer serviço oferecido na internet, inclusive, mas não se limitando a, serviços envolvendo compra e/ou venda, investimentos, seguros, aplicações, transferências de valores e demais operações financeiras, ou pela utilização ou confiança depositada pelo USUÁRIO em tais conteúdos, produtos ou serviços. </li>
